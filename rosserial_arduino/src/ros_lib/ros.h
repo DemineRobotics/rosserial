@@ -45,6 +45,7 @@
 
 namespace ros
 {
+/* The numbers define, in order, [MAX_SUBSCRIBERS, MAX_PUBLISHERS, INPUT_SIZE, OUTPUT_SIZE]. */
 #if defined(__AVR_ATmega8__) or defined(__AVR_ATmega168__)
   /* downsize our buffers */
   typedef NodeHandle_<ArduinoHardware, 6, 6, 150, 150> NodeHandle;
@@ -52,6 +53,10 @@ namespace ros
 #elif defined(__AVR_ATmega328P__)
 
   typedef NodeHandle_<ArduinoHardware, 25, 25, 280, 280> NodeHandle;
+
+#elif defined(__AVR_ATmega2560__)
+
+  typedef NodeHandle_<ArduinoHardware, 15, 15, 512, 1024> NodeHandle;
 
 #elif defined(SPARK)
 
