@@ -56,7 +56,7 @@ namespace ros
 
 #elif defined(__AVR_ATmega2560__)
 
-  typedef NodeHandle_<ArduinoHardware, 3, 3, 512, 1024> NodeHandle;
+  typedef NodeHandle_<ArduinoHardware, 1, 1, 2048, 2048> NodeHandle;
 
 #elif defined(SPARK)
 
